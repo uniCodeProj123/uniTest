@@ -12,8 +12,6 @@ const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
 const bookRouter = require('./routes/books')
 const loginRouter = require('./routes/logins')
-const basketRouter = require('./routes/baskets')
-
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -33,7 +31,6 @@ app.use('/', indexRouter)
 app.use('/authors', authorRouter)
 app.use('/books', bookRouter)
 app.use('/logins', loginRouter)
-app.use('/baskets', basketRouter)
 
 app.listen(process.env.PORT || 3000)
 
