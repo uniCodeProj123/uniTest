@@ -11,4 +11,4 @@ const basketSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Basket', loginSchema)
+module.exports = mongoose.model('Basket', basketSchema)

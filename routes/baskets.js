@@ -8,7 +8,7 @@ const Basket = require('../models/basket')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 router.get('/', async (req, res) => {
-  res.render('basket/index')
+  res.render('baskets/index')
 })
 
 module.exports = router
