@@ -4,12 +4,6 @@
     <img class="book-cover" src="<%= book.coverImagePath %>">
     <div class="book-details-btn-grid">
       <a class="btn btn-primary">Buy</a>
-      <form action="/baskets" method="POST">
-        <%- book.bookPrice %>
-        <div class="form-row form-row-end btn-row">
-          <button class="btn btn-primary" type="submit">Buy</button>
-        </div>
-      </form>
       <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
       <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
       <a class="btn btn-primary book-details-author-button" href="/authors/<%= book.author.id %>">View Author</a>
