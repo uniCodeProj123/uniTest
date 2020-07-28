@@ -6,7 +6,7 @@ const Login = require('../models/login')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 router.get('/', async (req, res) => {
-  res.render('index', { books: books })
+  res.render('logins/index')
 })
 
 module.exports = router
