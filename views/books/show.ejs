@@ -3,7 +3,22 @@
   <div>
     <img class="book-cover" src="<%= book.coverImagePath %>">
     <div class="book-details-btn-grid">
+<<<<<<< HEAD
       <a class="btn btn-primary">Buy</a>
+=======
+
+
+      <!-- <a class="btn btn-primary">Buy</a> -->
+
+      <form action="/baskets" method="POST">
+        <%- book.bookPrice %>
+        <div class="form-row form-row-end btn-row">
+          <button class="btn btn-primary" type="submit">Buy</button>
+        </div>
+      </form>
+
+
+>>>>>>> 08416b6b0f3b3dcaa255ee7f8590d816a8b52192
       <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
       <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
       <a class="btn btn-primary book-details-author-button" href="/authors/<%= book.author.id %>">View Author</a>
