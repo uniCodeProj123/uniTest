@@ -11,7 +11,6 @@ const methodOverride = require('method-override')
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
 const bookRouter = require('./routes/books')
-const loginRouter = require('./routes/logins')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -30,20 +29,5 @@ db.once('open', () => console.log('Connected to Mongoose'))
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
 app.use('/books', bookRouter)
-app.use('/logins', loginRouter)
 
 app.listen(process.env.PORT || 3000)
-
-
-
-// app.get(
-//   '/',
-//   function(req,res){
-//     res.send('Hello, World!');
-//   }
-// );
-//
-// var port = 3000;
-// app.listen(port,function(){
-//   console.log('Listening on port'+ port);
-// });
