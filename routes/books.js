@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
 const Author = require('../models/author')
-
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 // All Books Route
@@ -46,6 +45,7 @@ router.post('/', async (req, res) => {
     pageCount: req.body.pageCount,
     bookPrice: req.body.bookPrice,
     description: req.body.description,
+    category: req.body.category,
     stock: req.body.stock
   })
   saveCover(book, req.body.cover)
