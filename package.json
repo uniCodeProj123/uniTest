@@ -11,8 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@okta/oidc-middleware": "4.0.1",
-    "@okta/okta-signin-widget": "^4.2.3",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
