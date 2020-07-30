@@ -1,12 +1,13 @@
 <h2 class="page-header"><%= book.title %></h2>
 <div class="book-details">
-  <div>
+  <div style="margin:10px;">
     <img class="book-cover" src="<%= book.coverImagePath %>">
     <div class="book-details-btn-grid">
-      <a class="btn btn-primary">Buy</a>
-      <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
-      <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
-      <a class="btn btn-primary book-details-author-button" href="/authors/<%= book.author.id %>">View Author</a>
+      <a class="btn btn-primary" href="/users">Login to buy</a>
+      <!-- <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a> -->
+      <!--<%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %> -->
+      <!--       <a class="btn btn-primary book-details-author-button" href="/authors/<%= book.author.id %>">View Author</a> -->
+
     </div>
   </div>
 
@@ -21,5 +22,9 @@
     <div><%= book.description %></div>
     <div class="book-details-label">Price:</div>
     <div><%= book.bookPrice %></div>
+    <div class="book-details-label">Stock:</div>
+    <div><%= book.stock %></div>
+    <div class="book-details-label">Category:</div>
+    <div><%= book.category %></div>
   </div>
 </div>

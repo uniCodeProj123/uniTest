@@ -1,15 +1,13 @@
-const express = require('express')
-const router = express.Router()
-const Book = require('../models/book')
+var express = require('express');
+var router = express.Router();
 
-router.get('/', async (req, res) => {
-  let books
-  try {
-    books = await Book.find().sort({ createdAt: 'desc' }).limit(10).exec()
-  } catch {
-    books = []
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  if (req.userContext) {
+    res.render('index', { title: 'Express', user: req.userContext });
+  } else {
+    res.render('login', { title: 'Express' })
   }
-  res.render('index', { books: books })
-})
+});
 
-module.exports = router
+module.exports = router;

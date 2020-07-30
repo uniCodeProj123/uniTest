@@ -28,6 +28,10 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/clear', async (req, res) => {
+    res.redirect('/books')
+})
+
 // New Book Route
 router.get('/new', async (req, res) => {
   renderNewPage(res, new Book())
@@ -41,7 +45,8 @@ router.post('/', async (req, res) => {
     publishDate: new Date(req.body.publishDate),
     pageCount: req.body.pageCount,
     bookPrice: req.body.bookPrice,
-    description: req.body.description
+    description: req.body.description,
+    stock: req.body.stock
   })
   saveCover(book, req.body.cover)
 
@@ -87,6 +92,9 @@ router.put('/:id', async (req, res) => {
     book.pageCount = req.body.pageCount
     book.description = req.body.description
     book.bookPrice = req.body.bookPrice
+    book.stock = req.body.stock
+    book.category = req.body.category
+
     if (req.body.cover != null && req.body.cover !== '') {
       saveCover(book, req.body.cover)
     }
